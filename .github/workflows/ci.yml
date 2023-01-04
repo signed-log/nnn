@@ -26,10 +26,10 @@ jobs:
       - name: Compile with clang
         env:
           CC: clang
-        run: |
+        run:
+          brew update
           brew link --overwrite python@3.10
           brew link --overwrite python@3.11
-          brew update
           brew install llvm
           export PATH="/usr/local/opt/llvm/bin:$PATH"
           export CFLAGS="$CFLAGS -Werror"
